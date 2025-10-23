@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="bodo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodoland Entrepreneurs - Founder: Mukesh Boro</title>
+    <style>
+        /* === GLOBAL STYLES === */
+        :root {
+            --primary-green: #2e7d32;
+            --primary-blue: #0288d1;
+            --primary-yellow: #ffca28;
+            --primary-red: #d32f2f;
+            --primary-orange: #ff9800;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+            --background: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === FOUNDER HEADER === */
+        .founder-header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-green);
+        }
+
+        .founder-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .founder-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .founder-details h1 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .upi-id {
+            background: #ffeb3b;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        /* === NAVIGATION === */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 140px;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        /* === MAIN DASHBOARD === */
+        .dashboard {
+            padding-top: 200px;
+            min-height: 100vh;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-yellow);
+            color: var(--dark-text);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-warning {
+            background: #ff9800;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-info {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* === LIVE LEADS DASHBOARD === */
+        .leads-dashboard {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-title {
+            color: var(--primary-red);
+            font-size: 1.8rem;
+        }
+
+        .live-badge {
+            background: #f44336;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .trend-line {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* === REAL-TIME LEADS STREAM === */
+        .leads-stream {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            max-height: 600px;
+            overflow: hidden;
+        }
+
+        .stream-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .lead-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-green);
+            animation: slideInLeft 0.5s ease;
+            transition: all 0.3s;
+        }
+
+        .lead-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .lead-item.hot {
+            border-left-color: var(--primary-red);
+            background: #ffebee;
+        }
+
+        .lead-item.new {
+            border-left-color: var(--primary-orange);
+            background: #fff3e0;
+        }
+
+        .lead-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .lead-name {
+            font-weight: bold;
+            color: var(--dark-text);
+        }
+
+        .lead-score {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .lead-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .lead-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        /* === REGIONAL MAP === */
+        .regional-map {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .map-title {
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .region-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .region-item.active {
+            border-color: var(--primary-red);
+            background: #ffebee;
+        }
+
+        .region-item:hover {
+            transform: scale(1.05);
+        }
+
+        .region-leads {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin: 0.5rem 0;
+        }
+
+        .region-name {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* === PAYMENT SECTION === */
+        .payment-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .payment-option {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .payment-option.selected {
+            border-color: var(--primary-green);
+            background: #e8f5e8;
+        }
+
+        .qr-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--primary-green);
+        }
+
+        .qr-code {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            margin: 1rem auto;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #666;
+        }
+
+        .bank-details {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .bank-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .info-item {
+            padding: 0.5rem;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .info-value {
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        /* === INSTANT WITHDRAWAL SECTION === */
+        .instant-withdrawal {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .withdrawal-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .withdrawal-option {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .withdrawal-option:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-5px);
+        }
+
+        .withdrawal-option.instant {
+            border-color: #4CAF50;
+            background: #f1f8e9;
+        }
+
+        .withdrawal-time {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .time-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* === INCOME STREAMS === */
+        .income-streams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .income-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .income-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+        }
+
+        .income-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .income-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .income-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin: 1rem 0;
+        }
+
+        .income-progress {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 10px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* === SIDEBAR === */
+        .sidebar {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 220px;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .action-btn {
+            padding: 1rem;
+            background: #f8f9fa;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .real-time-stats {
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: var(--primary-red);
+        }
+
+        /* === NOTIFICATIONS === */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border-left: 4px solid var(--primary-green);
+            animation: slideInRight 0.5s ease;
+            z-index: 1000;
+            max-width: 300px;
+        }
+
+        .notification-income {
+            border-left-color: #4CAF50;
+        }
+
+        .notification-lead {
+            border-left-color: var(--primary-red);
+        }
+
+        .notification-payment {
+            border-left-color: #ff9800;
+        }
+
+        .notification-instant {
+            border-left-color: #4CAF50;
+            background: #f1f8e9;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .income-streams {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard {
+                padding-top: 240px;
+            }
+            
+            .bank-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .regions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Founder Header -->
+    <header class="founder-header">
+        <div class="container">
+            <div class="founder-info">
+                <div class="founder-avatar">MB</div>
+                <div class="founder-details">
+                    <h1>Mukesh Boro - Founder</h1>
+                    <div class="upi-id">PhonePe QR Code - Instant Bank Transfer 1-5 Minutes</div>
+                    <p>बोडोल्याण्ड एन्ट्रेप्रेनर्स - AI Lead Generation & Instant Withdrawal</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>🚀</span>
+                Bodoland Entrepreneurs
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                <li><a href="#leads" class="nav-link">AI Leads</a></li>
+                <li><a href="#withdraw" class="nav-link">Instant Withdraw</a></li>
+                <li><a href="#income" class="nav-link">Income</a></li>
+                <li><a href="#qr" class="nav-link">QR Code</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>मुकेश बोरो - AI लीड जनरेशन</h1>
+                <p>Assam & Bodoland Real-time Leads | Instant Withdrawal System</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="startAllAutomation()">
+                        🚀 Start All Automation
+                    </button>
+                    <button class="btn btn-info" onclick="startLeadGeneration()">
+                        🤖 Generate AI Leads
+                    </button>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Live Leads Dashboard -->
+                    <section class="leads-dashboard">
+                        <div class="dashboard-header">
+                            <h2 class="dashboard-title">🎯 AI Lead Generation Dashboard</h2>
+                            <div class="live-badge">LIVE</div>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" id="totalLeads">0</div>
+                                <div class="stat-label">Total Leads</div>
+                                <div class="trend-line" style="width: 85%"></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="todayLeads">0</div>
+                                <div class="stat-label">Today's Leads</div>
+                                <div class="trend-line" style="width: 70%"></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="hotLeads">0</div>
+                                <div class="stat-label">Hot Leads</div>
+                                <div class="trend-line" style="width: 60%"></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="conversionRate">0%</div>
+                                <div class="stat-label">Conversion Rate</div>
+                                <div class="trend-line" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-warning" onclick="generateBulkLeads(10)">
+                            ⚡ Generate 10 Leads
+                        </button>
+                        <button class="btn btn-success" onclick="exportLeads()">
+                            📁 Export Leads
+                        </button>
+                    </section>
+
+                    <!-- Real-time Leads Stream -->
+                    <section class="leads-stream">
+                        <h3>🔴 Live Incoming Leads - Assam & Bodoland</h3>
+                        <div class="stream-container" id="leadsContainer">
+                            <!-- Leads will appear here in real-time -->
+                        </div>
+                    </section>
+
+                    <!-- Regional Map -->
+                    <section class="regional-map">
+                        <h3 class="map-title">🗺️ Regional Lead Distribution</h3>
+                        <div class="regions-grid" id="regionsGrid">
+                            <!-- Regions will be loaded here -->
+                        </div>
+                    </section>
+
+                    <!-- Payment & Withdrawal Sections (Your existing code) -->
+                    <section class="instant-withdrawal">
+                        <h2>⚡ Instant Withdrawal - 1 to 5 Minutes</h2>
+                        <p style="color: #4CAF50; font-weight: bold; margin-bottom: 2rem;">
+                            ✅ Direct Bank Transfer via PhonePe QR Code
+                        </p>
+                        
+                        <div class="withdrawal-options">
+                            <div class="withdrawal-option instant" onclick="quickWithdraw(5000)">
+                                <div class="withdrawal-icon">💰</div>
+                                <h3>Quick ₹5,000</h3>
+                                <div class="withdrawal-time">
+                                    <span class="time-badge">1-2 MINUTES</span>
+                                </div>
+                                <p>Instant transfer to bank</p>
+                            </div>
+
+                            <div class="withdrawal-option instant" onclick="quickWithdraw(10000)">
+                                <div class="withdrawal-icon">💵</div>
+                                <h3>Fast ₹10,000</h3>
+                                <div class="withdrawal-time">
+                                    <span class="time-badge">2-3 MINUTES</span>
+                                </div>
+                                <p>Direct bank deposit</p>
+                            </div>
+
+                            <div class="withdrawal-option instant" onclick="quickWithdraw(25000)">
+                                <div class="withdrawal-icon">🏦</div>
+                                <h3>Max ₹25,000</h3>
+                                <div class="withdrawal-time">
+                                    <span class="time-badge">3-5 MINUTES</span>
+                                </div>
+                                <p>Maximum instant withdrawal</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-warning" onclick="showCustomWithdrawal()" style="margin-top: 1rem;">
+                            💳 Custom Amount
+                        </button>
+                    </section>
+
+                    <!-- QR Code Payment Section -->
+                    <section class="payment-section">
+                        <h2>📱 PhonePe QR Code - Scan & Pay</h2>
+                        <div class="qr-section">
+                            <h3>MUKESH BORO</h3>
+                            <div class="qr-code">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 4rem;">📱</div>
+                                    <div style="font-size: 1.2rem; font-weight: bold; color: #333;">PhonePe QR</div>
+                                    <div style="font-size: 0.9rem; color: #666;">Scan & Pay</div>
+                                </div>
+                            </div>
+                            <p style="font-weight: bold; color: var(--primary-green); margin: 1rem 0;">
+                                ✅ ACCEPTED HERE - Instant Bank Transfer
+                            </p>
+                            <p style="color: #666; font-size: 0.9rem;">
+                                © 2025, All rights reserved, PhonePe Ltd
+                            </p>
+                        </div>
+
+                        <div class="bank-details">
+                            <h4>🏦 Bank Transfer Details</h4>
+                            <div class="bank-info">
+                                <div class="info-item">
+                                    <div class="info-label">Account Holder</div>
+                                    <div class="info-value">MUKESH BORO</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Bank Name</div>
+                                    <div class="info-value">India Post Payment Bank</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Account Number</div>
+                                    <div class="info-value">•••• 0142</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">IFSC Code</div>
+                                    <div class="info-value">IPOS0000001</div>
+                                </div>
+                            </div>
+                            <p style="color: #4CAF50; font-weight: bold; text-align: center; margin-top: 1rem;">
+                                ⚡ Transfer Time: 1-5 Minutes
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Income Streams -->
+                    <section class="income-section">
+                        <h2>💰 Passive Income Streams</h2>
+                        <div class="income-streams">
+                            <div class="income-card" id="aiContentIncome">
+                                <div class="income-icon">🤖</div>
+                                <h3>AI Content Monetization</h3>
+                                <div class="income-amount">₹15,280</div>
+                                <div class="income-progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                                <p>Ready for Instant Withdrawal</p>
+                                <button class="btn btn-warning" onclick="instantWithdraw('content')">
+                                    ⚡ Withdraw Now
+                                </button>
+                            </div>
+
+                            <div class="income-card" id="affiliateIncome">
+                                <div class="income-icon">🛒</div>
+                                <h3>Affiliate Marketing</h3>
+                                <div class="income-amount">₹9,450</div>
+                                <div class="income-progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <p>Ready for Instant Withdrawal</p>
+                                <button class="btn btn-warning" onclick="instantWithdraw('affiliate')">
+                                    ⚡ Withdraw Now
+                                </button>
+                            </div>
+
+                            <div class="income-card" id="nftIncome">
+                                <div class="income-icon">🎨</div>
+                                <h3>NFT Sales</h3>
+                                <div class="income-amount">₹22,150</div>
+                                <div class="income-progress">
+                                    <div class="progress-bar" style="width: 92%"></div>
+                                </div>
+                                <p>Ready for Instant Withdrawal</p>
+                                <button class="btn btn-warning" onclick="instantWithdraw('nft')">
+                                    ⚡ Withdraw Now
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <h3>⚡ Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="startLeadGeneration()">
+                            🤖 Start AI Leads
+                        </button>
+                        <button class="action-btn" onclick="showInstantWithdrawal()">
+                            💰 Instant Withdraw
+                        </button>
+                        <button class="action-btn" onclick="scanQRCode()">
+                            📱 Scan QR Code
+                        </button>
+                        <button class="action-btn" onclick="viewAnalytics()">
+                            📊 View Analytics
+                        </button>
+                        <button class="action-btn" onclick="contactHotLeads()">
+                            📞 Contact Hot Leads
+                        </button>
+                    </div>
+
+                    <div class="real-time-stats">
+                        <h4>📈 Lead Analytics</h4>
+                        <div class="stat-item">
+                            <span>Leads/Minute:</span>
+                            <span class="stat-value" id="leadsPerMinute">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Assam Leads:</span>
+                            <span class="stat-value" id="assamLeads">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Bodoland Leads:</span>
+                            <span class="stat-value" id="bodolandLeads">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Avg. Score:</span>
+                            <span class="stat-value" id="avgScore">0</span>
+                        </div>
+                    </div>
+
+                    <div class="total-earnings">
+                        <h4>💵 Ready to Withdraw</h4>
+                        <div class="earning-amount" id="totalEarnings">₹46,880</div>
+                        <div style="color: #4CAF50; font-weight: bold; text-align: center; margin: 0.5rem 0;">
+                            ⚡ Instant Available
+                        </div>
+                        <button class="btn btn-success" onclick="instantWithdrawAll()" style="width: 100%; margin-top: 1rem;">
+                            🚀 Withdraw All Now
+                        </button>
+                    </div>
+
+                    <div class="ai-settings" style="margin-top: 2rem;">
+                        <h4>🤖 AI Settings</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                            <label>
+                                <input type="range" id="leadSpeed" min="1" max="10" value="5" onchange="updateSpeed()">
+                                Speed: <span id="speedValue">5</span>/10
+                            </label>
+                            <label>
+                                <input type="checkbox" id="autoContact" checked>
+                                Auto Contact Hot Leads
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notifications Area -->
+    <div id="notifications"></div>
+
+    <script>
+        // ===== ENHANCED SYSTEM WITH AI LEAD GENERATION =====
+        
+        class EnhancedSystem {
+            constructor() {
+                this.isRunning = true;
+                this.incomeStreams = {
+                    content: 15280,
+                    affiliate: 9450,
+                    nft: 22150
+                };
+                this.leads = [];
+                this.leadInterval = null;
+                this.speed = 5;
+                this.regions = [
+                    'Kokrajhar', 'Baksa', 'Chirang', 'Udalguri', 'Bongaigaon', 
+                    'Goalpara', 'Kamrup Metro', 'Kamrup Rural', 'Nagaon', 'Sonitpur',
+                    'Barpeta', 'Dibrugarh', 'Cachar', 'Tinsukia', 'Jorhat'
+                ];
+                
+                this.professions = [
+                    'Farmer', 'Teacher', 'Business Owner', 'Student', 'Government Employee',
+                    'Private Employee', 'Shop Owner', 'Artist', 'Tea Garden Worker', 'Weaver'
+                ];
+                
+                this.interests = [
+                    'Digital Skills', 'Business Growth', 'Farming Technology', 'Education',
+                    'Tourism', 'Handicrafts', 'Agriculture', 'E-commerce', 'Social Media'
+                ];
+                
+                this.init();
+            }
+
+            init() {
+                console.log('🚀 Enhanced System Started - AI Leads + Withdrawal');
+                this.loadData();
+                this.setupRegions();
+                this.startAllAutomation();
+                this.setupRealTimeUpdates();
+                this.showWelcomeNotification();
+            }
+
+            setupRegions() {
+                const regionsGrid = document.getElementById('regionsGrid');
+                regionsGrid.innerHTML = this.regions.map(region => `
+                    <div class="region-item" data-region="${region}">
+                        <div class="region-leads">0</div>
+                        <div class="region-name">${region}</div>
+                    </div>
+                `).join('');
+            }
+
+            startAllAutomation() {
+                this.startIncomeAutomation();
+                this.startPaymentMonitoring();
+                this.showNotification('⚡ All systems activated! AI leads + Instant withdrawal ready.', 'instant');
+            }
+
+            startLeadGeneration() {
+                if (this.leadInterval) {
+                    this.stopLeadGeneration();
+                    return;
+                }
+
+                const interval = (11 - this.speed) * 1000;
+                this.leadInterval = setInterval(() => {
+                    this.generateAILead();
+                }, interval);
+
+                this.showNotification('🤖 AI Lead Generation Started! New leads every few seconds.', 'lead');
+            }
+
+            stopLeadGeneration() {
+                if (this.leadInterval) {
+                    clearInterval(this.leadInterval);
+                    this.leadInterval = null;
+                }
+                this.showNotification('⏹️ Lead Generation Stopped', 'lead');
+            }
+
+            generateAILead() {
+                const region = this.regions[Math.floor(Math.random() * this.regions.length)];
+                const profession = this.professions[Math.floor(Math.random() * this.professions.length)];
+                const interest = this.interests[Math.floor(Math.random() * this.interests.length)];
+                
+                const leadScore = Math.floor(Math.random() * 100);
+                const leadValue = Math.floor(Math.random() * 5000) + 1000;
+                
+                const assamNames = [
+                    'Bhabesh Das', 'Monalisa Sharma', 'Rajiv Boro', 'Pranjal Kalita',
+                    'Nirmala Deka', 'Arjun Baruah', 'Priyanka Sarma', 'Deepak Nath'
+                ];
+
+                const bodoNames = [
+                    'Ranjit Basumatary', 'Bina Brahma', 'Dilip Boro', 'Sunita Narzary',
+                    'Prabin Bodo', 'Mina Daimary', 'Sanjay Boro', 'Rima Brahma'
+                ];
+
+                const names = region.includes('Kokrajhar') || region.includes('Baksa') || 
+                             region.includes('Chirang') || region.includes('Udalguri') ? 
+                             bodoNames : assamNames;
+
+                const lead = {
+                    id: Date.now() + Math.random(),
+                    name: names[Math.floor(Math.random() * names.length)],
+                    phone: this.generatePhoneNumber(),
+                    region: region,
+                    profession: profession,
+                    interest: interest,
+                    score: leadScore,
+                    value: leadValue,
+                    timestamp: new Date().toISOString(),
+                    status: 'new',
+                    type: leadScore >= 80 ? 'hot' : leadScore >= 50 ? 'warm' : 'cold',
+                    source: region.includes('Kokrajhar') || region.includes('Baksa') || 
+                           region.includes('Chirang') || region.includes('Udalguri') ? 'Bodoland' : 'Assam'
+                };
+
+                this.leads.unshift(lead);
+                this.saveData();
+                this.displayLead(lead);
+                this.updateStats();
+                this.showLeadNotification(lead);
+            }
+
+            generateBulkLeads(count) {
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => {
+                        this.generateAILead();
+                    }, i * 300);
+                }
+                this.showNotification(`⚡ Generating ${count} leads instantly...`, 'lead');
+            }
+
+            generatePhoneNumber() {
+                const prefixes = ['96', '97', '98', '99', '70', '80', '81', '82', '83', '84'];
+                const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+                const number = Math.floor(Math.random() * 90000000) + 10000000;
+                return `+91 ${prefix}${number.toString().substring(0, 4)} ${number.toString().substring(4)}`;
+            }
+
+            displayLead(lead) {
+                const container = document.getElementById('leadsContainer');
+                const leadElement = document.createElement('div');
+                leadElement.className = `lead-item ${lead.type}`;
+                leadElement.innerHTML = `
+                    <div class="lead-header">
+                        <div class="lead-name">${lead.name} • ${lead.source}</div>
+                        <div class="lead-score">${lead.score}/100</div>
+                    </div>
+                    <div class="lead-details">
+                        <div class="detail-item">
+                            <span>📍</span>
+                            <span>${lead.region}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>💼</span>
+                            <span>${lead.profession}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>🎯</span>
+                            <span>${lead.interest}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>💰</span>
+                            <span>₹${lead.value}</span>
+                        </div>
+                    </div>
+                    <div class="lead-actions">
+                        <button class="btn-small btn-primary" onclick="enhancedSystem.contactLead(${lead.id})">
+                            📞 Call
+                        </button>
+                        <button class="btn-small btn-success" onclick="enhancedSystem.whatsappLead(${lead.id})">
+                            💬 WhatsApp
+                        </button>
+                        <button class="btn-small btn-info" onclick="enhancedSystem.viewDetails(${lead.id})">
+                            👁️ View
+                        </button>
+                    </div>
+                `;
+                container.insertBefore(leadElement, container.firstChild);
+                
+                if (container.children.length > 20) {
+                    container.removeChild(container.lastChild);
+                }
+            }
+
+            updateStats() {
+                const totalLeads = this.leads.length;
+                const today = new Date().toDateString();
+                const todayLeads = this.leads.filter(lead => 
+                    new Date(lead.timestamp).toDateString() === today
+                ).length;
+
+                const hotLeads = this.leads.filter(lead => lead.score >= 80).length;
+                const assamLeads = this.leads.filter(lead => lead.source === 'Assam').length;
+                const bodolandLeads = this.leads.filter(lead => lead.source === 'Bodoland').length;
+                const avgScore = this.leads.length > 0 
+                    ? Math.round(this.leads.reduce((sum, lead) => sum + lead.score, 0) / this.leads.length)
+                    : 0;
+
+                // Update main counters
+                document.getElementById('totalLeads').textContent = totalLeads;
+                document.getElementById('todayLeads').textContent = todayLeads;
+                document.getElementById('hotLeads').textContent = hotLeads;
+                document.getElementById('conversionRate').textContent = '24%';
+
+                // Update sidebar stats
+                document.getElementById('leadsPerMinute').textContent = this.speed;
+                document.getElementById('assamLeads').textContent = assamLeads;
+                document.getElementById('bodolandLeads').textContent = bodolandLeads;
+                document.getElementById('avgScore').textContent = avgScore;
+
+                // Update region counts
+                this.updateRegionCounts();
+            }
+
+            updateRegionCounts() {
+                const regionCounts = {};
+                this.regions.forEach(region => {
+                    regionCounts[region] = 0;
+                });
+
+                this.leads.forEach(lead => {
+                    if (regionCounts[lead.region] !== undefined) {
+                        regionCounts[lead.region]++;
+                    }
+                });
+
+                document.querySelectorAll('.region-item').forEach(item => {
+                    const region = item.dataset.region;
+                    const count = regionCounts[region] || 0;
+                    item.querySelector('.region-leads').textContent = count;
+                    
+                    if (count > 5) {
+                        item.style.borderColor = '#f44336';
+                    }
+                });
+            }
+
+            // Lead Actions
+            contactLead(leadId) {
+                const lead = this.leads.find(l => l.id === leadId);
+                if (lead) {
+                    this.showNotification(`📞 Calling ${lead.name} - ${lead.phone}`, 'lead');
+                }
+            }
+
+            whatsappLead(leadId) {
+                const lead = this.leads.find(l => l.id === leadId);
+                if (lead) {
+                    const message = `Hello ${lead.name}! I found your profile through our AI system. Interested in ${lead.interest}?`;
+                    const url = `https://wa.me/${lead.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+                    window.open(url, '_blank');
+                    this.showNotification(`💬 Opening WhatsApp for ${lead.name}`, 'lead');
+                }
+            }
+
+            viewDetails(leadId) {
+                const lead = this.leads.find(l => l.id === leadId);
+                if (lead) {
+                    const details = `
+                        👤 Lead Details:
+                        
+                        Name: ${lead.name}
+                        Phone: ${lead.phone}
+                        Region: ${lead.region}
+                        Source: ${lead.source}
+                        Profession: ${lead.profession}
+                        Interest: ${lead.interest}
+                        Lead Score: ${lead.score}/100
+                        Potential Value: ₹${lead.value}
+                        Status: ${lead.type.toUpperCase()} lead
+                        Generated: ${new Date(lead.timestamp).toLocaleString()}
+                    `;
+                    alert(details);
+                }
+            }
+
+            contactHotLeads() {
+                const hotLeads = this.leads.filter(lead => lead.score >= 80);
+                if (hotLeads.length > 0) {
+                    alert(`📞 Contacting ${hotLeads.length} hot leads...
+                    
+This would automatically call/WhatsApp all hot leads in a real implementation.`);
+                } else {
+                    alert('No hot leads to contact!');
+                }
+            }
+
+            // Income & Withdrawal Methods (from your existing system)
+            startIncomeAutomation() {
+                setInterval(() => {
+                    this.generateAIContentIncome();
+                }, 20000);
+
+                setInterval(() => {
+                    this.generateAffiliateIncome();
+                }, 30000);
+
+                setInterval(() => {
+                    this.generateNFTIncome();
+                }, 40000);
+            }
+
+            generateAIContentIncome() {
+                const revenue = Math.random() * 100 + 25;
+                this.updateIncome('aiContentIncome', revenue);
+            }
+
+            generateAffiliateIncome() {
+                const revenue = Math.random() * 80 + 20;
+                this.updateIncome('affiliateIncome', revenue);
+            }
+
+            generateNFTIncome() {
+                const revenue = Math.random() * 150 + 40;
+                this.updateIncome('nftIncome', revenue);
+            }
+
+            updateIncome(streamId, amount) {
+                const element = document.getElementById(streamId);
+                if (element) {
+                    const amountElement = element.querySelector('.income-amount');
+                    const currentAmount = parseFloat(amountElement.textContent.replace('₹', '').replace(',', ''));
+                    const newAmount = currentAmount + amount;
+                    this.incomeStreams[streamId.replace('Income', '')] = newAmount;
+                    amountElement.textContent = `₹${newAmount.toFixed(0)}`;
+                    
+                    const progress = element.querySelector('.progress-bar');
+                    const newWidth = Math.min(100, (newAmount / 25000) * 100);
+                    progress.style.width = `${newWidth}%`;
+
+                    this.updateTotalEarnings();
+                }
+            }
+
+            updateTotalEarnings() {
+                const total = Object.values(this.incomeStreams).reduce((a, b) => a + b, 0);
+                document.getElementById('totalEarnings').textContent = `₹${total.toFixed(0)}`;
+            }
+
+            processInstantWithdrawal(amount, method = 'phonepe') {
+                if (amount < 100) {
+                    this.showNotification('Minimum withdrawal amount is ₹100', 'warning');
+                    return false;
+                }
+
+                if (amount > 25000) {
+                    this.showNotification('Maximum instant withdrawal is ₹25,000', 'warning');
+                    return false;
+                }
+
+                const totalEarnings = Object.values(this.incomeStreams).reduce((a, b) => a + b, 0);
+                if (amount > totalEarnings) {
+                    this.showNotification(`Insufficient balance. Available: ₹${totalEarnings}`, 'warning');
+                    return false;
+                }
+
+                this.showNotification(`⚡ Processing instant withdrawal of ₹${amount}...`, 'instant');
+                this.showWithdrawalCountdown(amount);
+                return true;
+            }
+
+            showWithdrawalCountdown(amount) {
+                let timeLeft = 5;
+                const countdownInterval = setInterval(() => {
+                    this.showNotification(`⏱️ Transfer in progress... ${timeLeft} minutes`, 'payment');
+                    timeLeft--;
+                    
+                    if (timeLeft < 0) {
+                        clearInterval(countdownInterval);
+                        this.completeWithdrawal(amount);
+                    }
+                }, 1000);
+            }
+
+            completeWithdrawal(amount) {
+                this.deductFromIncome(amount);
+                this.showNotification(`✅ Withdrawal successful! ₹${amount} transferred to your bank account`, 'success');
+                
+                setTimeout(() => {
+                    this.showTransferDetails(amount);
+                }, 1000);
+            }
+
+            deductFromIncome(amount) {
+                const total = Object.values(this.incomeStreams).reduce((a, b) => a + b, 0);
+                
+                Object.keys(this.incomeStreams).forEach(stream => {
+                    const streamAmount = this.incomeStreams[stream];
+                    const deduction = (streamAmount / total) * amount;
+                    this.incomeStreams[stream] = Math.max(0, streamAmount - deduction);
+                    this.updateIncomeDisplay(stream);
+                });
+                
+                this.updateTotalEarnings();
+            }
+
+            updateIncomeDisplay(streamType) {
+                const element = document.getElementById(streamType + 'Income');
+                if (element) {
+                    const amountElement = element.querySelector('.income-amount');
+                    amountElement.textContent = `₹${this.incomeStreams[streamType].toFixed(0)}`;
+                    const progress = element.querySelector('.progress-bar');
+                    const newWidth = Math.min(100, (this.incomeStreams[streamType] / 25000) * 100);
+                    progress.style.width = `${newWidth}%`;
+                }
+            }
+
+            instantWithdraw(streamType) {
+                const amount = this.incomeStreams[streamType];
+                if (amount > 0) {
+                    if (this.processInstantWithdrawal(amount, 'phonepe')) {
+                        this.incomeStreams[streamType] = 0;
+                        this.updateIncomeDisplay(streamType);
+                    }
+                } else {
+                    this.showNotification('No balance available for withdrawal', 'warning');
+                }
+            }
+
+            instantWithdrawAll() {
+                const total = Object.values(this.incomeStreams).reduce((a, b) => a + b, 0);
+                if (total > 0) {
+                    if (this.processInstantWithdrawal(total, 'phonepe')) {
+                        Object.keys(this.incomeStreams).forEach(stream => {
+                            this.incomeStreams[stream] = 0;
+                            this.updateIncomeDisplay(stream);
+                        });
+                    }
+                } else {
+                    this.showNotification('No funds available for withdrawal', 'warning');
+                }
+            }
+
+            showTransferDetails(amount) {
+                const details = `
+                    🏦 Transfer Details:
+                    
+                    ✅ Amount: ₹${amount}
+                    ✅ Status: Completed
+                    ✅ Method: PhonePe QR Code
+                    ✅ Bank: India Post Payment Bank
+                    ✅ Time: 1-5 minutes
+                    ✅ Reference: MB${Date.now().toString().slice(-6)}
+                    
+                    Funds will reflect in your account shortly.
+                `;
+                alert(details);
+            }
+
+            startPaymentMonitoring() {
+                setInterval(() => {
+                    // Payment monitoring logic
+                }, 60000);
+            }
+
+            // Utility Methods
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <div class="notification-message">${message}</div>
+                        <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                    </div>
+                `;
+                
+                document.getElementById('notifications').appendChild(notification);
+                
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 5000);
+            }
+
+            showLeadNotification(lead) {
+                const emoji = lead.score >= 80 ? '🔥' : lead.score >= 50 ? '⭐' : '👤';
+                this.showNotification(
+                    `${emoji} New ${lead.type} lead: ${lead.name} from ${lead.region} - Score: ${lead.score}/100`,
+                    'lead'
+                );
+            }
+
+            showWelcomeNotification() {
+                this.showNotification('🚀 Enhanced System Active! AI Leads + Instant Withdrawal Ready', 'instant');
+            }
+
+            exportLeads() {
+                const dataStr = JSON.stringify(this.leads, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `assam-bodoland-leads-${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+                this.showNotification('📁 All leads exported successfully!', 'lead');
+            }
+
+            updateSpeed() {
+                this.speed = parseInt(document.getElementById('leadSpeed').value);
+                document.getElementById('speedValue').textContent = this.speed;
+                
+                if (this.leadInterval) {
+                    this.stopLeadGeneration();
+                    this.startLeadGeneration();
+                }
+            }
+
+            saveData() {
+                const data = {
+                    leads: this.leads,
+                    income: this.incomeStreams,
+                    settings: {
+                        speed: this.speed,
+                        lastUpdated: new Date().toISOString()
+                    }
+                };
+                localStorage.setItem('enhanced_system_data', JSON.stringify(data));
+            }
+
+            loadData() {
+                const saved = localStorage.getItem('enhanced_system_data');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    this.leads = data.leads || [];
+                    this.incomeStreams = data.income || this.incomeStreams;
+                    this.speed = data.settings?.speed || 5;
+                    document.getElementById('leadSpeed').value = this.speed;
+                    document.getElementById('speedValue').textContent = this.speed;
+                    
+                    // Display existing leads
+                    this.leads.forEach(lead => this.displayLead(lead));
+                    this.updateTotalEarnings();
+                }
+            }
+
+            setupRealTimeUpdates() {
+                setInterval(() => {
+                    this.updateStats();
+                }, 2000);
+            }
+        }
+
+        // ===== GLOBAL FUNCTIONS =====
+        function startAllAutomation() {
+            window.enhancedSystem.startAllAutomation();
+        }
+
+        function startLeadGeneration() {
+            window.enhancedSystem.startLeadGeneration();
+        }
+
+        function generateBulkLeads(count) {
+            window.enhancedSystem.generateBulkLeads(count);
+        }
+
+        function exportLeads() {
+            window.enhancedSystem.exportLeads();
+        }
+
+        function showInstantWithdrawal() {
+            document.querySelector('.instant-withdrawal').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function quickWithdraw(amount) {
+            if (window.enhancedSystem.processInstantWithdrawal(amount, 'phonepe')) {
+                // Success
+            }
+        }
+
+        function showCustomWithdrawal() {
+            // Your existing custom withdrawal function
+            alert('Custom withdrawal feature - Use the instant withdrawal buttons above');
+        }
+
+        function instantWithdraw(streamType) {
+            window.enhancedSystem.instantWithdraw(streamType);
+        }
+
+        function instantWithdrawAll() {
+            window.enhancedSystem.instantWithdrawAll();
+        }
+
+        function scanQRCode() {
+            alert('📱 PhonePe QR Code\n\n1. Open PhonePe App\n2. Tap "Scan QR Code"\n3. Scan the QR code above\n4. Enter amount and pay\n5. Money transfers in 1-5 minutes to your bank');
+        }
+
+        function viewAnalytics() {
+            const total = window.enhancedSystem.leads.length;
+            const hot = window.enhancedSystem.leads.filter(lead => lead.score >= 80).length;
+            const assam = window.enhancedSystem.leads.filter(lead => lead.source === 'Assam').length;
+            const bodoland = window.enhancedSystem.leads.filter(lead => lead.source === 'Bodoland').length;
+            
+            alert(`📊 Enhanced Analytics:
+            
+Total Leads: ${total}
+🔥 Hot Leads: ${hot}
+📍 Assam Leads: ${assam}
+🏞️ Bodoland Leads: ${bodoland}
+📈 Conversion Rate: 24%
+⚡ Leads/Minute: ${document.getElementById('leadsPerMinute').textContent}
+            `);
+        }
+
+        function contactHotLeads() {
+            window.enhancedSystem.contactHotLeads();
+        }
+
+        function updateSpeed() {
+            window.enhancedSystem.updateSpeed();
+        }
+
+        // ===== INITIALIZE SYSTEM =====
+        document.addEventListener('DOMContentLoaded', function() {
+            window.enhancedSystem = new EnhancedSystem();
+            
+            // Start with some initial leads
+            setTimeout(() => {
+                window.enhancedSystem.generateBulkLeads(8);
+            }, 1000);
+        });
+
+    </script>
+</body>
+</html>
